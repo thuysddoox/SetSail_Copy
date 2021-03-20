@@ -1,8 +1,8 @@
 ////////////////////////////SHOW SLIDER
 var slideText = document.getElementsByClassName("slidesIntro__text");
 var slider = document.getElementsByClassName("slidesIntro")[0];
-var slideImg = ["url('/assets/images/sliderIntro-1.jpg')",
-    "url('/assets/images/sliderIntro-2.jpg')"
+var slideImg = ["url('./assets/images/sliderIntro-1.jpg')",
+    "url('./assets/images/sliderIntro-2.jpg')"
 ];
 var slidedots = document.getElementsByClassName("slidesIntro__dots-item");
 var indexSlide = 1;

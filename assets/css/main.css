@@ -1,0 +1,1799 @@
+/*
+    The name of project : setsail_demo
+    The name of author  : thuysddoox
+    The date of begining: 26/02/2021
+    The date of ending  :
+    The version         : 26022021
+*/
+
+
+/* ======================== TABLE OF CONTENT ======================== */
+
+
+/*
+    1. HEADER
+        1.1. Contact
+        1.2. Navigation bar
+    2. SLIDESHOW INTRODUCE
+*/
+
+
+/* -------------- 1. HEADER --------------- */
+
+#app {
+    overflow: hidden;
+}
+
+.header {
+    width: 100%;
+}
+
+.NavMedium {
+    display: none;
+}
+
+
+/* ------------- 1.1. Contact ------------ */
+
+.header__infor {
+    background-color: rgb(28, 28, 28);
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    align-items: center;
+    padding-left: 20px;
+    position: relative;
+}
+
+.header__infor a {
+    color: white;
+}
+
+.header__infor-contact-list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.header__infor-contact-item {
+    margin-right: 20px;
+}
+
+.header__infor-contact-item:hover a {
+    color: var(--primary-color);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.header__infor-contact-item i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.header__infor-right {
+    display: flex;
+    margin: 0;
+    align-items: center;
+}
+
+.header__infor-social-list {
+    display: flex;
+    padding: 0;
+    margin-right: 32px;
+}
+
+.header__infor-social-item {
+    padding: 0 10px;
+}
+
+.header__infor-social-item:hover a {
+    transition: color 0.3s ease-in;
+    color: var(--primary-color);
+}
+
+.header__infor-language--actived {
+    color: white;
+    cursor: pointer;
+    background-color: #3ABDC1;
+    padding: 12px 32px;
+    position: relative;
+    transition: all 0.3s linear;
+}
+
+.header__infor-language--actived:hover .header__infor-language-list {
+    display: block;
+    top: 100%;
+}
+
+.header__infor-language-list {
+    display: none;
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    z-index: 1;
+}
+
+.header__infor-language-item {
+    background-color: var(--primary-color);
+    padding: 12px 32px;
+}
+
+.header__infor-language-item>span {
+    position: relative;
+}
+
+.header__infor-language-item>span::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 0%;
+    top: 100%;
+    left: 0%;
+    background-color: white;
+    animation-name: progressDes;
+    animation-timing-function: ease;
+    animation-duration: 0.7s;
+}
+
+.header__infor-language-item:hover>span::after {
+    animation: progressAsc;
+    animation-timing-function: ease;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes progressAsc {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes progressDes {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0%;
+    }
+}
+
+.header__infor-user-avatar {
+    color: white;
+    font-size: 2.7rem;
+    background-color: var(--primary-color);
+    padding: 2px 16px;
+    cursor: pointer;
+}
+
+
+/* ------------- 1.2. Navigation Bar ------------ */
+
+.header__navbar {
+    height: var(--height-navbar);
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+}
+
+.header__navbar-logo {}
+
+.header__navbar-logo>img {
+    height: auto;
+    max-width: 160px;
+}
+
+.header__navbar-option-list {
+    margin: 0 auto;
+}
+
+.header__navbar-option-item {
+    display: inline-block;
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    line-height: var(--height-navbar);
+    padding: 0px 36px;
+}
+
+.header__navbar-option-item>a {
+    position: relative;
+}
+
+.header__navbar-option-item:hover .header__navbar-submenu {
+    display: block;
+    animation: fadeDown 0.5s ease forwards;
+}
+
+.header__navbar-submenu-item>a:after,
+.header__navbar-option-item>a:after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 0%;
+    top: 100%;
+    left: 0%;
+    background-color: var(--primary-color);
+    animation-name: progressDes;
+    animation-timing-function: ease;
+    animation-duration: 0.7s;
+    will-change: width;
+}
+
+.header__navbar-option-item:hover>a:after,
+.header__navbar-submenu-item:hover>a:after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 0%;
+    top: 100%;
+    left: 0%;
+    background-color: var(--primary-color);
+    animation-name: progressAsc;
+    animation-timing-function: ease;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.header__navbar-submenu-item:hover i,
+.header__navbar-submenu-item:hover>a,
+.header__navbar-option-item:hover>a {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.header__navbar-submenu {
+    position: absolute;
+    top: 70%;
+    left: 30px;
+    width: 250px;
+    padding: 20px 0px;
+    background-color: white;
+    z-index: 1;
+    display: none;
+}
+
+.header__navbar-submenu-item {
+    padding: 0px 30px;
+    line-height: 4rem;
+}
+
+.header__navbar-submenu-item a {
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    position: relative;
+}
+
+.header__navbar-submenu-shoppage {
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    background-color: white;
+    z-index: 1;
+    display: none;
+}
+
+.shoppage {
+    position: relative;
+}
+
+.shoppage:hover .header__navbar-submenu-shoppage {
+    display: block;
+}
+
+.shoppage i {
+    float: right;
+    line-height: 3rem;
+    height: 3rem;
+    margin-top: 1px;
+}
+
+.header__navbar-submenu-shoppage {
+    position: absolute;
+    left: 100%;
+    top: 0%;
+    width: 100%;
+}
+
+.header__navbar-submenu-shoppage-item:hover a {
+    color: #3ABDC1;
+    transition: all 0.3s linear;
+    font-size: 1.8rem;
+}
+
+.header__navbar-other {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2.1rem;
+}
+
+.header__navbar-bag {
+    padding: 0px 16px;
+    font-size: 2.2rem;
+    position: relative;
+}
+
+.header__navbar-bag:hover .bag__products-list {
+    display: block;
+    animation: fadeDown 0.2s ease-in forwards;
+}
+
+.bag__products-list {
+    position: absolute;
+    left: -260px;
+    font-size: 1.4rem;
+    width: 300px;
+    padding: 64px 32px 30px 24px;
+    background-color: white;
+    z-index: 1;
+    display: none;
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        top: 0%;
+    }
+    to {
+        opacity: 1;
+        top: 85%;
+    }
+}
+
+.header__navbar-search {
+    padding: 0px 16px;
+}
+
+.header__navbar-bag:hover>i,
+.header__navbar-search:hover>i {
+    color: var(--primary-color);
+    transition: all 0.5s linear;
+}
+
+.header__navbar-baricon {
+    width: 20px;
+    height: 18px;
+    position: relative;
+    border-color: black;
+    border-style: solid;
+    border-width: 0px;
+    border-bottom-width: 3px;
+    margin-left: 16px;
+}
+
+.header__navbar-baricon:after,
+.header__navbar-baricon::before {
+    content: "";
+    height: 3px;
+    position: absolute;
+    padding: 0;
+    background-color: black;
+    right: 0%;
+}
+
+.header__navbar-baricon:after {
+    top: 50%;
+    width: 70%;
+    transition: all 0.5s ease;
+}
+
+.header__navbar-baricon::before {
+    top: 0%;
+    width: 50%;
+    transition: all 0.5s ease;
+}
+
+.header__navbar-baricon:hover {
+    border-color: var(--primary-color);
+    transition: all 0.5s ease;
+}
+
+.header__navbar-baricon:hover::before,
+.header__navbar-baricon:hover:after {
+    width: 100%;
+    transition: all 0.5s ease;
+    background-color: var(--primary-color);
+}
+
+
+/* ---------------- 2. SlideShow Introduce --------------*/
+
+.slidesIntro {
+    background-attachment: fixed;
+    background-image: url(../images/sliderIntro-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    height: 480px;
+    position: relative;
+    user-select: none;
+    text-align: center;
+}
+
+@keyframes slidesIntroBg {
+    from {
+        background-size: 100%;
+    }
+    to {
+        background-size: 110%;
+    }
+}
+
+.slidesIntro__text:nth-child(2) {
+    display: none;
+}
+
+.slidesIntro__text {
+    width: 100%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+}
+
+.slidesIntro__text-begin {
+    font-family: 'Dancing Script', cursive;
+    font-size: 5rem;
+    animation: riseText 1s linear forwards;
+}
+
+.slidesIntro__text-slogant {
+    font-size: 10rem;
+    animation: riseText 1.2s linear forwards;
+}
+
+.slidesIntro__text-describe {
+    font-size: 2rem;
+    width: 50%;
+    font-weight: normal;
+    margin: 0 auto;
+    animation: riseText 1.4s linear forwards;
+}
+
+@keyframes riseText {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.slideIntro__btn-group {
+    padding: 0px 24px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.slideIntro__btn-group button {
+    width: 56px;
+    height: 56px;
+    border: none;
+    border-radius: 50%;
+    color: #3ABDC1;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s linear;
+}
+
+.slideIntro__btn-group button:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transition: all 0.3s linear;
+}
+
+.slideIntro__btn-group i {
+    line-height: 56px;
+    user-select: auto;
+}
+
+.slideIntro__btn-right {}
+
+.slidesIntro__dots {
+    /* display: none; */
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.slidesIntro__dots-item {
+    opacity: 0.7;
+    box-shadow: 1px 0px 20px rgb(96, 95, 95), 0px 1px 30px rgb(103, 102, 102);
+    margin: 0px 3px;
+    cursor: pointer;
+}
+
+
+/* ----------- 3. SEARCH TAG DETAIL -------------*/
+
+.searchtag {
+    margin: 0 auto;
+    position: relative;
+    background-color: white;
+    overflow: hidden;
+    top: -36px;
+    width: max-content;
+    z-index: auto;
+    box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.2), 0px 0px 15px rgba(226, 225, 225, 0.6);
+}
+
+.searchtag__form {
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+}
+
+.search-item {
+    margin: 0 auto;
+}
+
+.search-item:nth-child(2) {
+    border-right: 1px solid rgb(240, 237, 237);
+    border-left: 1px solid rgb(240, 238, 238);
+}
+
+.searchtag__form input,
+.searchtag__form select,
+.searchtag__form label {
+    font-family: 'Poppins', sans-serif;
+    color: var(--content-color);
+    font-size: 1.5rem;
+    outline: none;
+    border: none;
+}
+
+.searchtag__form label {
+    padding: 10px;
+    padding-left: 8px;
+}
+
+.searchtag__form input,
+.searchtag__form select {
+    padding-right: 40px;
+    width: 80%;
+}
+
+.searchtag__form input[type="submit"] {
+    color: white;
+    background-color: var(--primary-color);
+    width: 100%;
+    padding: 24px 0px;
+}
+
+.searchtag__form option:nth-child(1) {
+    color: var(--primary-color);
+}
+
+.searchtag__form option:hover {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.searchtag__form input[type="submit"]:hover {
+    background-color: #3ABDC1;
+    transition: 0.5s;
+}
+
+
+/* --------------- 4. CONTENT ----------------- */
+
+.app__content {
+    margin-top: 64px;
+    overflow: hidden;
+}
+
+
+/* ---------- 4.1. CHOOSE YOUR PERFECT HOLIDAY ----------*/
+
+.content__choice-tour {}
+
+.content__choice-tour-list {
+    display: flex;
+    justify-content: center;
+}
+
+.content__choice-tour-item {
+    position: relative;
+    transition: all 0.5s linear;
+    margin: 0 auto;
+}
+
+.content__choice-tour-item:hover .content__choice-tour-item-img::before {
+    opacity: 1;
+}
+
+.content__choice-tour-item-img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.content__choice-tour-item:hover {
+    transition: all 0.5s linear;
+    /* padding: 20px; */
+    overflow: hidden;
+    box-shadow: 1px 1px 10px rgb(103, 102, 102), 1px 1px 20px rgba(103, 102, 102, 0.4);
+}
+
+.content__choice-tour-item-img>img {
+    width: 100%;
+}
+
+.content__choice-tour-item-img::after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 99%;
+    top: 0%;
+    left: 0%;
+    z-index: 1;
+    background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0.4) 90%);
+}
+
+.content__choice-tour-item-img::before {
+    position: absolute;
+    transition: all 0.5s linear;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 99%;
+    top: 0%;
+    left: 0%;
+    z-index: 1;
+    opacity: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 80%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.content__choice-tour-item-none .content__choice-tour-item-img::after,
+.content__choice-tour-item-none .content__choice-tour-item-img::before {
+    border-radius: 50%;
+}
+
+.content__choice-tour-item-des {
+    padding: 32px;
+    position: absolute;
+    top: 60%;
+    left: 0%;
+    right: 0%;
+    color: white;
+    font-size: 1.9rem;
+    width: 100%;
+    z-index: 2;
+}
+
+.content__choice-tour-item-feature {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content__choice-tour-item-name {
+    font-weight: bold;
+}
+
+.content__choice-tour-item-rate {
+    font-size: 1.5rem;
+}
+
+.content__choice-tour-item-price {
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.content__choice-tour-item-none img {
+    border-radius: 50%;
+}
+
+.content__choice-tour-item-none .content__choice-tour-item-des {
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 4.5rem;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+}
+
+.content__choice-tour-greet {
+    text-align: center;
+    padding-bottom: 64px;
+    margin: 64px 0px;
+}
+
+
+/* ------------- 4.2. Breathtaking Cities --------------- */
+
+.content__breathtaking-city {}
+
+.content__breathtaking-city-intro-wrap {
+    background-attachment: fixed;
+    background-image: url(../images/breathtaking.jpg);
+    background-size: center;
+    background-repeat: no-repeat;
+    background-position: top center;
+    height: 750px;
+    text-align: center;
+    transform: translateZ(0);
+    -webkit-font-smoothing: antialiased;
+    padding: 64px 0px 16px 0px;
+}
+
+.content__breathtaking-city-intro {
+    color: white;
+    margin: 0 auto;
+    padding-bottom: 24px;
+}
+
+.content__breathtaking-city-intro-begin {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+}
+
+.content__breathtaking-city-intro-slogant {
+    font-size: 6rem;
+    font-weight: bold;
+}
+
+.content__breathtaking-city-intro-describe {
+    font-weight: lighter;
+    font-size: 1.8rem;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.content__breathtaking-city-intro-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.content__breathtaking-city-img {
+    transform: scale(1.3);
+    padding-top: 50px;
+}
+
+.content__breathtaking-city-img {
+    position: relative;
+}
+
+.content__breathtaking-city-img img {}
+
+.content__breathtaking-city-video-btn {
+    font-size: 1.4rem;
+    color: white;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    cursor: pointer;
+    transition: all 3s linear;
+}
+
+.content__breathtaking-city-video-btn i {
+    margin: 0 auto;
+}
+
+.content__breathtaking-city-video-btn:hover {
+    background-color: #3ABDC1;
+    zoom: 1.05;
+    transition: all 3s linear;
+}
+
+.content__breathtaking-city-video {
+    display: none;
+    position: fixed!important;
+    left: 50%;
+    top: 50%;
+    z-index: 4!important;
+    width: 60%;
+    max-width: 960px;
+    transform: translate(-50%, -50%);
+    animation: fadeVideo 1s linear forwards;
+}
+
+@keyframes fadeVideo {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.content__breathtaking-city-video iframe {
+    width: 100%;
+    height: 576px;
+}
+
+.content__breathtaking-city-video p {
+    color: white;
+    padding: 16px;
+    background-image: linear-gradient(left to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9));
+}
+
+.content__breathtaking-city-video a {
+    color: #3ABDC1;
+    text-decoration: underline;
+}
+
+.content__breathtaking-city-video p,
+.content__breathtaking-city-video a {
+    font-size: 2.5rem;
+}
+
+.content__breathtaking-city-list {
+    padding: 150px 0px;
+    margin: 0 auto;
+}
+
+.content__breathtaking-city-item {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.content__breathtaking-city-item-img {
+    padding: 8px;
+    position: relative;
+    top: 0%;
+    transition: all 0.3s linear;
+}
+
+.content__breathtaking-city-item-img:hover {
+    transition: all 0.3s linear;
+    top: -5%;
+}
+
+.content__breathtaking-city-item-heading {
+    font-size: 1.8rem;
+    padding: 16px 0px 8px 0px;
+}
+
+.content__breathtaking-city-item-des {
+    color: var(--content-color);
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1.4rem;
+}
+
+
+/* --------------- 4.4. Plan the Holiday ------------*/
+
+.content__plan-holiday {}
+
+.content__plan-holiday-wrap {
+    background-color: rgb(248, 248, 248);
+    padding: 50px 0px 0px 0px;
+}
+
+.content__plan-holiday-list-wrap {
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    width: auto;
+    scroll-behavior: smooth;
+}
+
+.content__plan-holiday-list {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.content__plan-holiday-list-wrap::-webkit-scrollbar {
+    display: none;
+}
+
+.content__plan-holiday-list .row {
+    margin-top: 8px;
+}
+
+.content__plan-holiday-item {
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+
+.content__plan-holiday-item:hover {
+    transition: all 0.3s linear;
+    margin-top: -8px;
+    cursor: pointer;
+}
+
+.content__plan-holiday-item-img {
+    overflow: hidden;
+    width: 100%;
+    box-shadow: 1px 1px 5px rgba(225, 219, 219, 0.1), 1px 1px 10px rgba(171, 171, 171, 0.6);
+}
+
+.content__plan-holiday-item-img img {
+    width: 100%;
+    height: auto;
+    box-shadow: 1px 1px 5px rgba(225, 219, 219, 0.1), 1px 1px 10px rgba(171, 171, 171, 0.6);
+    transition: all 0.3s linear;
+    display: block;
+}
+
+.content__plan-holiday-item-img:hover img {
+    transform: scale(1.06);
+    transition: all 0.3s linear;
+}
+
+.content__plan-holiday-item-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+    font-size: 1.4rem;
+    box-shadow: 1px 1px 5px rgba(225, 219, 219, 0.1), 1px 1px 10px rgba(171, 171, 171, 0.6);
+}
+
+.content__plan-holiday-item-info-calendar {
+    padding: 0px 8px;
+}
+
+.content__plan-holiday-item-info-number {
+    padding: 0px 8px;
+}
+
+.content__plan-holiday-item-info-address {
+    padding: 0px 8px;
+}
+
+.content__plan-holiday-item-info i {
+    padding: 8px;
+    font-size: 1.6rem;
+}
+
+.content__plan-holiday-item-text {
+    font-size: 1.5rem;
+    margin: 0 auto;
+    padding: 32px 24px 40px 24px;
+    box-shadow: 1px 1px 5px rgba(225, 219, 219, 0.1), 1px 1px 10px rgba(171, 171, 171, 0.6);
+    background-color: white;
+}
+
+.content__plan-holiday-item-text-heading {
+    font-size: 2.2rem;
+}
+
+.content__plan-holiday-item-text-des {
+    color: var(--content-color);
+    font-weight: lighter;
+    line-height: 2.5rem;
+    padding: 8px 0px;
+}
+
+.content__plan-holiday-item-text-feature {
+    font-weight: 600;
+    opacity: 0.9;
+    padding-top: 8px;
+}
+
+.content__plan-holiday-item-text-feature strong {
+    margin: 4px;
+}
+
+.content__plan-holiday-item-text-price {
+    margin-right: 16px;
+}
+
+.content__plan-holiday-item-text-rate {
+    margin-right: 8px;
+}
+
+.content__plan-holiday-dots {
+    margin: 32px 0px 100px 0px;
+    justify-content: center;
+}
+
+.content__plan-holiday-dot-item {
+    margin: 8px;
+    opacity: 0.6;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+
+
+/*feedback plan holiday*/
+
+.content__plan-holiday-feedback-wrap {
+    background-color: white;
+}
+
+.content__plan-holiday-feedback-list {
+    padding: 100px 0px;
+    position: relative;
+    overflow: hidden;
+}
+
+.content__plan-holiday-feedback {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+
+.content__plan-holiday-feedback::-webkit-scrollbar {
+    display: none;
+}
+
+.content__plan-holiday-feedback-item {
+    text-align: center;
+    transition: all 0.6s ease-in-out;
+    width: 100%;
+    position: relative;
+}
+
+.content__plan-holiday-feedback-user-img img {
+    margin-bottom: 4px;
+}
+
+.content__plan-holiday-feedback-text {
+    font-size: 1.8rem;
+    color: var(--content-color);
+    width: 50%;
+    margin: 24px auto;
+}
+
+.content__plan-holiday-feedback-name {
+    font-size: 2.7rem;
+    color: rgba(0, 0, 0, 0.8);
+    font-family: 'Dancing Script', cursive;
+}
+
+.plan-holiday-feedback__btn-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.plan-holiday-feedback__btn-right,
+.plan-holiday-feedback__btn-left {
+    font-size: 4rem;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    transition: all 0.5s linear;
+    opacity: 0.7;
+    outline: none;
+}
+
+.plan-holiday-feedback__btn-right:hover,
+.plan-holiday-feedback__btn-left:hover {
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.5s linear;
+}
+
+
+/* ------------- 4.5. Unforgettable Mediterranean ---------------- */
+
+.content__mediterranean {
+    background-image: url(../images/background-unforgetable-1.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 120px 0px 100px 0px;
+    text-align: center;
+}
+
+.content__mediterranean-wrap {}
+
+.content__mediterranean-list {
+    margin: 0 auto;
+}
+
+.content__mediterranean-item {
+    position: relative;
+    transition: all 0.3s linear;
+    top: 0;
+}
+
+.content__mediterranean-item-img::after {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 80%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.content__mediterranean-item-img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.7s linear;
+    position: relative;
+}
+
+.content__mediterranean-item:hover {
+    top: -10px;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+
+.content__mediterranean-item:hover img {
+    transition: all 1s linear;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.content__mediterranean-item-img img {
+    width: 100%;
+    height: auto;
+    transform: scale(1.05);
+}
+
+.content__mediterranean-item-label {
+    position: absolute;
+    top: 1.2rem;
+    right: 12px;
+}
+
+.content__mediterranean-item-label-content {
+    font-size: 1.5rem;
+    color: white;
+    padding: 8px 24px;
+    display: block;
+    background-color: var(--primary-color);
+}
+
+.content__mediterranean-item-info {
+    position: absolute;
+    color: white;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.content__mediterranean-item-name {
+    font-size: 2.3rem;
+}
+
+.content__mediterranean-item-price {
+    font-size: 1.8rem;
+}
+
+
+/* ----------------------- 4.6. Travel Review -------------------- */
+
+.content__travel-review {
+    background-attachment: fixed;
+    background-image: url(../images/travelreview.jpg);
+    background-position: top center;
+    background-size: contain;
+    padding: 80px 0px 80px 0px;
+}
+
+.content__travel-review-wrap {
+    position: relative;
+}
+
+.content__travel-review-intro-begin,
+.content__travel-review-intro-heading,
+.content__travel-review-intro-describe {
+    opacity: 1;
+    color: white;
+}
+
+.content__travel-review-list-wrap {
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+    width: auto;
+}
+
+.content__travel-review-list {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.content__travel-review-list-wrap::-webkit-scrollbar {
+    display: none;
+}
+
+.content__travel-review-item {}
+
+.content__travel-review-item-wrap {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    padding: 32px;
+}
+
+.content__travel-review-item-img {
+    padding: 4px 12px;
+}
+
+.content__travel-review-item-content {
+    padding-left: 12px;
+}
+
+.travel-review-item__content-name-place {
+    font-size: 2.2rem;
+}
+
+.travel-review-item__content-rate {
+    color: var(--primary-color);
+}
+
+.travel-review-item__content-rate i {
+    padding: 14px 4px 16px 4px;
+}
+
+.travel-review-item__content-text {
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+    margin-bottom: 16px;
+}
+
+.travel-review-item__content-name-user {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.content__travel-review-dots {
+    margin: 54px 0px;
+    justify-content: center;
+}
+
+.content__plan-holiday-dot-item {
+    opacity: 0.5;
+}
+
+
+/* -------------- 4.7. From Our Blog -------------- */
+
+.content__ourBlog {
+    background-color: white;
+}
+
+.content__ourBlog-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 150px;
+    padding-bottom: 50px;
+}
+
+.content__ourBlog-content {}
+
+.ourBlog__content-intro {}
+
+.ourBlog__content-intro-heading {
+    font-size: 4.3rem;
+}
+
+.ourBlog__content-intro-text {
+    color: var(--content-color);
+    font-size: 1.7rem;
+    padding-top: 12px;
+}
+
+.ourBlog__content-list {
+    margin-top: 56px;
+}
+
+.ourBlog__content-item {
+    display: flex;
+    padding: 16px 0px;
+}
+
+.ourBlog__content-item-img {
+    width: 35%;
+}
+
+.ourBlog__content-item-img img {
+    width: 100%;
+    height: auto;
+}
+
+.ourBlog__content-item-des {
+    padding-left: 24px;
+}
+
+.ourBlog__content-item-heading {
+    font-size: 2.2rem;
+    padding-bottom: 12px;
+    transition: all 0.3s linear;
+}
+
+.ourBlog__content-item-text {
+    font-size: 1.4rem;
+    color: var(--content-color);
+}
+
+.ourBlog__content-item-note {
+    padding: 16px 0px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.ourBlog__content-item-time {
+    transition: all 0.3s linear;
+}
+
+.ourBlog__content-item-cmt {
+    margin-left: 16px;
+    transition: all 0.3s linear;
+}
+
+.ourBlog__content-item-cmt i {
+    padding: 0px 8px;
+}
+
+.ourBlog__content-item-cmt:hover,
+.ourBlog__content-item-time:hover,
+.ourBlog__content-item-heading:hover {
+    color: var(--primary-color);
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+
+.content__ourBlog-banner {
+    position: relative;
+    padding: 12px;
+    overflow: hidden;
+}
+
+.content__ourBlog-banner img {
+    width: 100%;
+    height: auto;
+}
+
+.content__ourBlog-banner-label {
+    position: absolute;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    width: 140%;
+    padding: 24px 0px;
+    top: 16%;
+    left: 50%;
+    transform: translateX(-50%) rotate(-15deg);
+    text-align: center;
+}
+
+.content__ourBlog-banner-label-link {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: black;
+}
+
+.content__ourBlog-banner-label-sale {
+    font-size: 3.7rem;
+}
+
+
+/* -------------------- 4.7. Destination ---------------------- */
+
+.content__destination {
+    background-image: url(../images/destination.jpg);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 60px 0px 150px 0px;
+}
+
+.content__destination-list {}
+
+.content__destination-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.content__destination-item:hover img {
+    transition: all 0.5s linear;
+    transform: scale(1.1);
+}
+
+.content__destination-item-img {
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.content__destination-item-img::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+.content__destination-item-img img {
+    width: 100%;
+    transform: scale(1.05);
+    height: auto;
+    transition: all 0.5s linear;
+    border-radius: 50%;
+}
+
+.content__destination-item-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Dancing Script', cursive;
+    color: white;
+    font-size: 4.5rem;
+}
+
+.content__destination-item-label {
+    color: white;
+    position: absolute;
+    top: 10%;
+    right: 12%;
+}
+
+.content__destination-item-label span {
+    display: block;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    background-color: var(--primary-color);
+}
+
+
+/* ----------------- 4.8. Pack up and Go -----------------*/
+
+.content__packup {
+    padding: 40px 0px 150px 0px;
+}
+
+.content__packup-wrap {}
+
+.content__packup-slide {
+    position: relative;
+}
+
+.content__packup-slide-list {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: auto;
+    scrollbar-width: 0;
+    position: relative;
+    z-index: 1;
+    scroll-behavior: smooth;
+    user-select: none;
+}
+
+.content__packup-slide-list::-webkit-scrollbar {
+    display: none;
+}
+
+.content__packup-slide-item {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: auto;
+    position: relative;
+    min-height: 350px;
+}
+
+.content__packup-slide-item-img img {
+    border: 12px solid;
+    border-image: url(../images/stamp.png) 17 round;
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.1));
+}
+
+.content__packup-slide-item-img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.content__packup-slide-item:nth-child(5) .content__packup-slide-item-intro {
+    left: -10%;
+}
+
+.content__packup-slide-item:hover .content__packup-slide-item-intro {
+    display: block;
+}
+
+.content__packup-slide-item-intro {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    z-index: 3;
+    width: 70%;
+    top: 50%;
+    right: -10%;
+    padding: 40px 16px;
+    border-radius: 50%;
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.1));
+    background-color: white;
+    animation: displayIntro 0.5s linear forwards;
+    transform-origin: center center;
+}
+
+.content__packup-slide-item-intro .content__packup-slide-item-introleft {
+    left: -15%;
+}
+
+@keyframes displayIntro {
+    from {
+        transform: scale(0.9);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+.content__packup-slide-item-intro-heading {
+    font-size: 1.5rem;
+    padding-bottom: 4px;
+}
+
+.content__packup-slide-item-intro-text {
+    font-size: 1.3rem;
+    color: var(--content-color);
+}
+
+.packup__btn-group {
+    z-index: 0;
+    width: 110%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.packup__btn-left,
+.packup__btn-right {
+    border: none;
+    background-color: white;
+    font-size: 3rem;
+    transition: all 0.3s linear;
+    outline: none;
+    cursor: pointer;
+}
+
+.packup__btn-left:hover,
+.packup__btn-right:hover {
+    color: #3ABDC1;
+    transition: all 0.3s linear;
+}
+
+
+/* --------------- 4.8. Join Now ---------------- */
+
+.content__join {
+    background-color: var(--primary-color);
+    display: flex;
+    user-select: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 48px 100px;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.content__join-text {
+    color: white;
+}
+
+.content__join-btn button {
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: rgb(54, 54, 54);
+    padding: 20px 60px;
+    transition: all 0.3s linear;
+}
+
+.content__join-btn button:hover {
+    background-color: #10787b;
+    color: white;
+    box-shadow: 0px 0px 3px #0fe5ec inset, 0px 0px 3px #0a888c;
+}
+
+
+/* ------------------------------ 5. FOOTER -------------------------------*/
+
+.app__footer {
+    padding: 110px 100px 0px 100px;
+    background-color: rgb(33, 33, 33);
+    color: white;
+}
+
+.app__footer-wrap {
+    padding-bottom: 50px;
+}
+
+.footer__info {}
+
+.footer__info-logo {}
+
+.footer__info-des {
+    color: rgb(89, 89, 89);
+    font-size: 1.7rem;
+    padding: 16px 0px;
+}
+
+.footer__infor-contact-list {
+    flex-direction: column;
+}
+
+.footer__infor-contact-item {
+    display: block;
+    padding: 4px 0px;
+}
+
+.footer__infor-contact-item a,
+.footer__infor-contact-item i {
+    color: white;
+    transition: all 0.3s linear;
+    font-size: 1.5rem;
+}
+
+.footer__infor-contact-item:hover i,
+.footer__infor-contact-item:hover a {
+    color: var(--primary-color);
+}
+
+.footer__post {}
+
+.footer__post-heading,
+.footer__subscribe-heading,
+.footer__insta-heading {
+    font-size: 1.9rem;
+    padding-bottom: 12px;
+}
+
+.footer__post-list {}
+
+.footer__post-item {
+    font-size: 1.5rem;
+    padding: 8px 0px;
+}
+
+.footer__post-item-content {
+    color: rgb(89, 89, 89);
+    padding: 4px 0px;
+    transition: all 0.3s linear;
+}
+
+.footer__post-item-content:hover,
+.footer__post-item-date:hover {
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.footer__post-item-date {
+    transition: all 0.3s linear;
+}
+
+.footer__subscribe {}
+
+.footer__subscribe-text,
+.footer__insta-text {
+    color: rgb(89, 89, 89);
+    font-size: 1.5rem;
+    padding: 12px 0px;
+}
+
+.footer__subscribe-form {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.footer__subscribe-form-name,
+.footer__subscribe-form-email {
+    width: 100%;
+    background-color: rgb(89, 89, 89);
+    padding-left: 24px;
+    margin: 5px 0px;
+}
+
+.footer__subscribe-form input {
+    background-color: rgb(89, 89, 89);
+    display: inline-block;
+    color: white;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    padding: 12px;
+    font-size: 1.5rem;
+}
+
+.footer__subscribe-form input::placeholder {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer__subscribe-form input[type="submit"] {
+    display: block;
+    width: 100%;
+    background-color: var(--primary-color);
+    transition: all 0.3s linear;
+    font-weight: bold;
+}
+
+#submit-btn:hover {
+    background-color: white;
+    color: rgb(89, 89, 89);
+}
+
+.footer__insta-heading {}
+
+.footer__insta {}
+
+.app__footer-powered {
+    padding: 24px 0px;
+    text-align: center;
+    font-size: 1.4rem;
+    color: rgb(89, 89, 89);
+}
+
+.app__footer-powered-link {
+    color: white;
+    transition: all 0.3s linear;
+}
+
+.app__footer-powered-link:hover {
+    color: var(--primary-color);
+}
+
+
+/* ----------------- 6. The Others -------------------- */
+
+
+/* ---------6.1. Button go to top ------------*/
+
+.app__top-btn {
+    position: fixed;
+    bottom: 3%;
+    right: 3%;
+}
+
+.app__top-btn-link {
+    transition: all 0.3s linear;
+    color: var(--primary-color);
+    background-color: white;
+    display: block;
+    font-size: 1.4rem;
+    scroll-behavior: smooth;
+    padding: 20px 18px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px rgba(171, 170, 170, 0.6);
+}
+
+.app__top-btn-link:hover {
+    color: white;
+    background-color: var(--primary-color);
+}

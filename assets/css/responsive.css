@@ -1,0 +1,131 @@
+/*
+320px (breakpoint thường dùng cho smartphone)
+768px (breakpoint thường dùng cho tablet)
+1024px (breakpoint thường dùng cho thiết bị màn hình lớn như laptop, PC, TV….).  
+*/
+
+
+/*responsive header*/
+
+@media screen and(max-width:1023px) {}
+
+
+/*Mobile*/
+
+@media (max-width: 768px) {
+    .slidesIntro__text-slogant {
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+    .slidesIntro__text-begin {
+        font-size: 1.6rem;
+    }
+    .slidesIntro__text-describe {
+        width: 80%;
+        font-size: 1.5rem;
+        display: none;
+    }
+    .slidesIntro {
+        height: 580px;
+        background-size: 500%;
+    }
+    @keyframes slidesIntroBg {
+        from {
+            background-size: 500%;
+        }
+        to {
+            background-size: 510%;
+        }
+    }
+}
+
+
+/*Tablet*/
+
+@media (max-width: 1024px) and (min-width:768px),
+(max-width:768px) {
+    .header {
+        display: none;
+    }
+    .NavMedium {
+        display: block;
+        background-color: var(--primary-color);
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        right: 0%;
+        z-index: 1;
+        padding: 8px 4px;
+    }
+    .NavMedium-wrap {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .header__navbar-baricon {
+        border-color: white;
+    }
+    .header__navbar-baricon::after,
+    .header__navbar-baricon::before {
+        background-color: white;
+    }
+    .header__navbar-baricon:hover {
+        transition: all 0.5s ease;
+    }
+    .header__navbar-baricon:hover::before,
+    .header__navbar-baricon:hover:after {
+        width: 100%;
+        transition: all 0.5s ease;
+    }
+    .header__navbar-logo {
+        text-align: center;
+    }
+    .header__navbar-logo img {
+        width: 60%;
+        height: auto;
+    }
+    /* .slidesIntro__dots {
+        display: block;
+    } */
+    .slideIntro__btn-group {
+        display: none;
+    }
+    .slidesIntro {
+        height: 580px;
+    }
+    @keyframes slidesIntroBg {
+        from {
+            background-size: 150%;
+        }
+        to {
+            background-size: 160%;
+        }
+    }
+    .slidesIntro__text-slogant {
+        font-size: 8rem;
+        padding: 16px;
+    }
+    .slidesIntro__text-begin {
+        font-size: 4rem;
+    }
+    .slidesIntro__text-describe {
+        width: 70%;
+        font-size: 1.7rem;
+    }
+    .content__choice-tour-item {
+        margin: 8px;
+    }
+    .search-item {
+        margin: 0 auto;
+    }
+    .searchtag__form input,
+    .searchtag__form select {
+        padding-right: 20px;
+    }
+}
+
+
+/*PC*/
+
+@media (min-width: 1200px) {}

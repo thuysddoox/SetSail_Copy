@@ -1,0 +1,89 @@
+:root {
+    --primary-color: rgb(63, 208, 212);
+    --text-color: rgb(33, 33, 33);
+    --content-color: rgb(83, 83, 83);
+    --height-navbar: 80px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.slide__btn-group {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button {
+    cursor: pointer;
+}
+
+.slide__dots {
+    display: flex;
+}
+
+.slide__dots-item {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+}
+
+.content__part-intro {
+    text-align: center;
+    width: 100%;
+    margin: 48px 0px;
+}
+
+.content__intro-begin {
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-family: 'Dancing Script', cursive;
+}
+
+.content__intro-heading {
+    font-size: 6rem;
+    font-weight: bolder;
+    color: black;
+}
+
+.content__intro-describe {
+    font-size: 1.8rem;
+    font-weight: lighter;
+    color: var(--content-color);
+    opacity: 0.8;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.modal-box {
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    z-index: 2;
+    cursor: default;
+    background-color: rgba(0, 0, 0, 0.6);
+}

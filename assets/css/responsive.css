@@ -10,36 +10,6 @@
 @media screen and(max-width:1023px) {}
 
 
-/*Mobile*/
-
-@media (max-width: 768px) {
-    .slidesIntro__text-slogant {
-        font-size: 2rem;
-        line-height: 3rem;
-    }
-    .slidesIntro__text-begin {
-        font-size: 1.6rem;
-    }
-    .slidesIntro__text-describe {
-        width: 80%;
-        font-size: 1.5rem;
-        display: none;
-    }
-    .slidesIntro {
-        height: 580px;
-        background-size: 500%;
-    }
-    @keyframes slidesIntroBg {
-        from {
-            background-size: 500%;
-        }
-        to {
-            background-size: 510%;
-        }
-    }
-}
-
-
 /*Tablet*/
 
 @media (max-width: 1024px) and (min-width:768px),
@@ -54,7 +24,7 @@
         top: 0%;
         left: 0%;
         right: 0%;
-        z-index: 1;
+        z-index: 5;
         padding: 8px 4px;
     }
     .NavMedium-wrap {
@@ -113,6 +83,9 @@
         width: 70%;
         font-size: 1.7rem;
     }
+    .slidesIntro__dots {
+        display: flex;
+    }
     .content__choice-tour-item {
         margin: 8px;
     }
@@ -129,3 +102,218 @@
 /*PC*/
 
 @media (min-width: 1200px) {}
+
+
+/*Mobile*/
+
+@media (max-width: 768px) {
+    .slidesIntro__text-slogant {
+        font-size: 5rem;
+        line-height: 3rem;
+        padding: 24px;
+    }
+    .slidesIntro__text-begin {
+        font-size: 3rem;
+    }
+    .slidesIntro__text-describe {
+        width: 70%;
+        font-size: 1.4rem;
+        /* display: none; */
+    }
+    .slidesIntro {
+        height: 500px;
+        /* background-size: 500%; */
+    }
+    @keyframes slidesIntroBg {
+        from {
+            background-size: 250%;
+        }
+        to {
+            background-size: 260%;
+        }
+    }
+    .searchtag {
+        background-color: rgba(255, 255, 255, 0);
+        box-shadow: none;
+        top: -40px;
+    }
+    .searchtag__form {
+        flex-direction: column;
+        width: 70%;
+        padding: 0;
+    }
+    .search-item:nth-child(2) {
+        border: none;
+        border-top: 1px solid rgb(240, 237, 237);
+        border-bottom: 1px solid rgb(240, 238, 238);
+    }
+    .search-item {
+        width: 100%;
+        line-height: 40px;
+        padding: 16px 0px;
+        background-color: white;
+        text-align: left;
+    }
+    .searchtag__form input[type="submit"] {
+        padding: 12px;
+    }
+    .searchtag__form label {
+        padding-left: 16px;
+    }
+    .searchtag__form input,
+    .searchtag__form select {
+        padding-right: 16px;
+        width: 80%;
+    }
+    .content__breathtaking-city-intro-begin,
+    .content__intro-begin {
+        font-size: 4rem;
+    }
+    .content__breathtaking-city-intro-slogant,
+    .content__intro-heading {
+        font-size: 4.5rem;
+    }
+    .content__breathtaking-city-intro-describe,
+    .content__intro-describe {
+        font-size: 1.6rem;
+        width: 80%;
+    }
+    .content__join {
+        font-size: 1.5rem;
+    }
+    .content__plan-holiday-feedback-text {
+        width: 80%;
+        font-size: 1.6rem;
+    }
+    .content__travel-review-item-wrap {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .content__destination {
+        background-position: center top;
+    }
+    .content__ourBlog-wrap {
+        justify-content: center;
+    }
+    .content__mediterranean-item,
+    .content__destination-item {
+        padding: 10px;
+    }
+    .content__mediterranean-item:last-child,
+    .content__destination-item:last-child {
+        float: left;
+    }
+    .content__mediterranean-item-label {
+        top: 1rem;
+        right: 10px;
+    }
+    .content__join {
+        padding: 48px;
+    }
+    .footer__info img {
+        width: 90%;
+        height: auto;
+    }
+    .app__footer {
+        padding: 110px 20px 0px 20px;
+    }
+    .app__footer .col {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slidesIntro__text-describe {
+        font-size: 1.3rem;
+        width: 90%;
+    }
+    .slidesIntro__text-slogant {
+        font-size: 2.8rem;
+    }
+    .slidesIntro__text-begin {
+        font-size: 3.5rem;
+    }
+    .searchtag {
+        top: -24px;
+    }
+    .searchtag__form {
+        width: 95%;
+    }
+    .slidesIntro {
+        height: 400px;
+        /* background-size: 500%; */
+    }
+    .content__choice-tour-greet img {
+        width: 70%;
+        height: auto;
+    }
+    .content__part-intro {
+        margin-bottom: 60px;
+    }
+    .content__breathtaking-city-intro-begin,
+    .content__intro-begin {
+        font-size: 3rem;
+    }
+    .content__breathtaking-city-intro-slogant,
+    .content__intro-heading {
+        font-size: 3rem;
+    }
+    .content__breathtaking-city-intro-describe,
+    .content__intro-describe {
+        font-size: 1.3rem;
+        width: 80%;
+    }
+    .content__choice-tour-item-name {
+        font-size: 1.6rem;
+    }
+    .content__choice-tour-item-rate {
+        font-size: 1.4rem;
+    }
+    .content__choice-tour-item-price {
+        font-size: 1.4rem;
+    }
+    .content__breathtaking-city-item {
+        padding: 16px 0px;
+    }
+    .content__mediterranean-item-name {
+        font-size: 1.6rem;
+    }
+    .content__mediterranean-item-price {
+        font-size: 1.4rem;
+    }
+    .ourBlog__content-intro-heading {
+        font-size: 3rem;
+    }
+    .ourBlog__content-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .ourBlog__content-item-des {
+        padding: 0;
+    }
+    .content__mediterranean-item,
+    .content__destination-item {
+        padding: 16px;
+    }
+    .content__join {
+        padding: 24px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .content__join button {
+        margin-top: 16px;
+    }
+    .content__destination,
+    .content__mediterranean,
+    .content__breathtaking-city-list,
+    .content__packup {
+        padding-bottom: 60px;
+    }
+    .app__footer .col {
+        padding: 12px;
+    }
+    .app__footer {
+        padding-top: 80px;
+    }
+}

@@ -498,9 +498,9 @@
 .slideIntro__btn-right {}
 
 .slidesIntro__dots {
-    /* display: none; */
+    display: none;
     position: absolute;
-    top: 80%;
+    top: 85%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -508,7 +508,7 @@
 .slidesIntro__dots-item {
     opacity: 0.7;
     box-shadow: 1px 0px 20px rgb(96, 95, 95), 0px 1px 30px rgb(103, 102, 102);
-    margin: 0px 3px;
+    margin: 0px 6px;
     cursor: pointer;
 }
 
@@ -516,24 +516,30 @@
 /* ----------- 3. SEARCH TAG DETAIL -------------*/
 
 .searchtag {
-    margin: 0 auto;
     position: relative;
-    background-color: white;
     overflow: hidden;
     top: -36px;
     width: max-content;
     z-index: auto;
-    box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.2), 0px 0px 15px rgba(226, 225, 225, 0.6);
+}
+
+.searchtag__form.row {
+    margin: 0 auto;
 }
 
 .searchtag__form {
     display: flex;
     align-items: center;
     padding-left: 16px;
+    justify-content: center;
+    box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.2), 0px 0px 15px rgba(226, 225, 225, 0.6);
+    width: 90%;
+    background-color: white;
+    text-align: center;
 }
 
-.search-item {
-    margin: 0 auto;
+.search-item.col {
+    padding: 0;
 }
 
 .search-item:nth-child(2) {
@@ -552,14 +558,13 @@
 }
 
 .searchtag__form label {
-    padding: 10px;
-    padding-left: 8px;
+    padding: 12px;
 }
 
 .searchtag__form input,
 .searchtag__form select {
     padding-right: 40px;
-    width: 80%;
+    width: 70%;
 }
 
 .searchtag__form input[type="submit"] {
@@ -587,7 +592,7 @@
 /* --------------- 4. CONTENT ----------------- */
 
 .app__content {
-    margin-top: 64px;
+    margin-top: 24px;
     overflow: hidden;
 }
 

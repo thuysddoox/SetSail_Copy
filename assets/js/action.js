@@ -91,12 +91,12 @@ var feedbackDirect = 1;
 function showFeedBack() {
     if (feedbackDirect == 1) {
         for (let i = 0; i < feedback.length; i++) {
-            feedback[i].style.transform = "translate(-100%,0%)";
+            feedback[i].style.transform = "translateX(100%)";
         }
         feedbackDirect = 0;
     } else {
         for (let i = 0; i < feedback.length; i++)
-            feedback[i].style.transform = "translate(0%,0%)";
+            feedback[i].style.transform = "translateX(0%)";
         feedbackDirect = 1;
     }
 }

@@ -96,6 +96,19 @@
     .searchtag__form select {
         padding-right: 20px;
     }
+    .content__plan-holiday-item-info {
+        font-size: 1.3rem;
+    }
+    .content__plan-holiday-item-text-price,
+    .content__plan-holiday-item-text-rate {
+        font-size: 1.3rem;
+    }
+    .content__plan-holiday-item-text-des {
+        font-size: 1.4rem;
+    }
+    .content__plan-holiday-item-text-heading {
+        font-size: 2rem;
+    }
 }
 
 

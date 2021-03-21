@@ -49,7 +49,7 @@ function playVideo() {
 var listSlide = document.getElementsByClassName("content__packup-slide-list")[0];
 var itemPackUp = document.getElementsByClassName("content__packup-slide-item")[0];
 var itemPackUpList = document.getElementsByClassName("content__packup-slide-item-intro");
-
+listSlide.scrollLeft = 0;
 
 function showPackUp() {
     if (packUpDirect == 1) {
@@ -87,16 +87,17 @@ packUpRight.addEventListener("click", scrollRight);
 ///////////////////////////SHOW FEEDBACK
 var feedback = document.getElementsByClassName("content__plan-holiday-feedback-item");
 var feedbackDirect = 1;
+feedback[0].scrollLeft = 0;
 
 function showFeedBack() {
     if (feedbackDirect == 1) {
         for (let i = 0; i < feedback.length; i++) {
-            feedback[i].style.transform = "translateX(100%)";
+            feedback[i].style.transform = "translateX(0%)";
         }
         feedbackDirect = 0;
     } else {
         for (let i = 0; i < feedback.length; i++)
-            feedback[i].style.transform = "translateX(0%)";
+            feedback[i].style.transform = "translateX(-100%)";
         feedbackDirect = 1;
     }
 }

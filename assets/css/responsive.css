@@ -34,11 +34,11 @@
         margin: 0 auto;
     }
     .header__navbar-baricon {
-        border-color: white;
+        border-color: white !important;
     }
     .header__navbar-baricon::after,
     .header__navbar-baricon::before {
-        background-color: white;
+        background-color: white !important;
     }
     .header__navbar-baricon:hover {
         transition: all 0.5s ease;
@@ -108,6 +108,16 @@
     }
     .content__plan-holiday-item-text-heading {
         font-size: 2rem;
+    }
+    .content__mediterranean-list .col {
+        margin: 10px;
+    }
+    .content__mediterranean-list.row {
+        justify-content: center;
+        padding-bottom: 50px;
+    }
+    .content__plan-holiday-feedback-list {
+        padding-bottom: 50px;
     }
 }
 

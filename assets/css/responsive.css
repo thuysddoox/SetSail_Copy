@@ -119,6 +119,9 @@
     .content__plan-holiday-feedback-list {
         padding-bottom: 50px;
     }
+    .signIn-Login {
+        width: 40%;
+    }
 }
 
 
@@ -338,5 +341,8 @@
     }
     .app__footer {
         padding-top: 80px;
+    }
+    .signIn-Login {
+        width: 100%;
     }
 }

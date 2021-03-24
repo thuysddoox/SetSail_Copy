@@ -201,3 +201,38 @@ function clickDotPlan(idPlan) {
     }
     planShow = setInterval(showPlan, 2000);
 }
+
+/////////////////// SHOW LOGIN-SIGNIN
+var loginBtn = document.getElementsByClassName("Login__title")[0];
+var login = document.getElementsByClassName("Login")[0];
+var signInBtn = document.getElementsByClassName("SignIn__title")[0];
+var signIn = document.getElementsByClassName("signIn")[0];
+var formLoginSignin = document.getElementsByClassName("signIn-Login")[0];
+var modal = document.getElementsByClassName("modal-box-form")[0];
+var login_signin = document.getElementsByClassName("header__infor-user-avatar")[0];
+
+function login__signin() {
+    if (formLoginSignin.style.display != "block") {
+        formLoginSignin.style.display = "block";
+        modal.style.display = "block";
+    } else {
+        formLoginSignin.style.display = "none";
+        modal.style.display = "none";
+    }
+
+}
+
+/*LOGIN */
+loginBtn.onclick = function() {
+        login.style.display = "block";
+        signIn.style.display = "none";
+        loginBtn.style.backgroundColor = "var(--primary-color)";
+        signInBtn.style.backgroundColor = "rgb(58, 189, 193)";
+    }
+    /*SIGN IN */
+signInBtn.onclick = function() {
+    login.style.display = "none";
+    signIn.style.display = "block";
+    signInBtn.style.backgroundColor = "var(--primary-color)";
+    loginBtn.style.backgroundColor = "rgb(58, 189, 193)";
+}

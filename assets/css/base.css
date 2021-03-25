@@ -94,6 +94,6 @@ button {
 
 button,
 input {
-    appearance: unset;
-    -webkit-appearance: unset;
+    appearance: none;
+    -webkit-appearance: none;
 }

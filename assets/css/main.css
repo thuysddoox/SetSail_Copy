@@ -1336,7 +1336,8 @@
     background-attachment: fixed;
     background-image: url(../images/travelreview.jpg);
     background-position: top center;
-    background-size: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
     padding: 80px 0px 80px 0px;
 }
 

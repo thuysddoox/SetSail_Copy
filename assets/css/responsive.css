@@ -122,6 +122,12 @@
     .signIn-Login {
         width: 40%;
     }
+    .footer__info img {
+        width: 100%;
+    }
+    .footer__subscribe-form input {
+        width: 80%;
+    }
 }
 
 

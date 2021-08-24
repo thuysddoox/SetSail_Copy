@@ -1085,6 +1085,7 @@ choice-tour {}
      appearance: none;
     width: 100%;
     height: auto;
+    min-height: 800px;
      aspect-ratio: 1 / 1;
     -webkit-aspect-ratio: 1 / 1;
     box-shadow: 1px 1px 5px rgba(225, 219, 219, 0.1), 1px 1px 10px rgba(171, 171, 171, 0.6);
@@ -1102,7 +1103,8 @@ choice-tour {}
     justify-content: flex-start;
     align-items: center;
     background-color: var(--primary-color);
-    color: white;
+/*     color: white; */
+    color: red;
     padding: 10px;
     font-size: 1.4rem;
     box-shadow: 1px 1px 5px rgba(225, 219, 219, 0.1), 1px 1px 10px rgba(171, 171, 171, 0.6);

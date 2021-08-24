@@ -748,7 +748,10 @@
 
 /* ---------- 4.1. CHOOSE YOUR PERFECT HOLIDAY ----------*/
 
-.content__choice-tour {}
+.
+
+
+choice-tour {}
 
 .content__choice-tour-list {
     display: flex;
@@ -781,6 +784,7 @@
 
 .content__choice-tour-item-img>img {
     width: 100%;
+   
 }
 
 .content__choice-tour-item-img::after {
@@ -1078,8 +1082,11 @@
 }
 
 .content__plan-holiday-item-img img {
+     appearance: none;
     width: 100%;
     height: auto;
+     aspect-ratio: 1 / 1;
+    -webkit-aspect-ratio: 1 / 1;
     box-shadow: 1px 1px 5px rgba(225, 219, 219, 0.1), 1px 1px 10px rgba(171, 171, 171, 0.6);
     transition: all 0.3s linear;
     display: block;
